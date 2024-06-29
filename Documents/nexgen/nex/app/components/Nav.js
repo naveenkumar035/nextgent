@@ -28,54 +28,70 @@ function Nav(){
         {show ?  
     <div className=" " >
     <div className="menucard" >
-      <div className="flex flex-col items-center h-screen"  >
-      <div className="p-3" > category 1 </div> 
-      <div className="p-3"  >category 2</div>
+      <div className="flex flex-col items-center h-full overflow-y-scroll "  >
+      <div className="p-3" > Home </div> 
+      <div className="p-3"  >About us</div>
       <div className="p-3"  >
-        category 3
+        Academic
       </div>
       <div className="p-3"  >
-        category 4
+        Events
       </div>
       <div className="p-3"  >
-        category 5
+        Gallery
       </div>
-      
+      <div className="p-3"  >
+        Testimonials
+      </div>
+      <div className="p-3"  >
+        Career
+        </div>
+        <div className="p-3"  >
+         Contact
+        </div>
       </div>
     </div> </div>: null
        }
       </div>
-      <Link href="cat1">
+      <Link href="/">
       <div className="hidden sm:block xl:inline" >
-        category 1
+        Home
       </div>
       </Link>
       <Link href="cat2">
       <div className="hidden sm:block xl:inline" >
-        category 2
+        About us
       </div>
       </Link>
       <Link href="cat3">
       <div className="hidden sm:block xl:inline" >
-        category 3
+        Academic 
       </div>
       </Link>
       <Link href="cat4">
       <div className="hidden sm:block xl:inline" >
-        category 4
+        Events
       </div>
       </Link>
       <Link href="cat5">
       <div className="hidden sm:block xl:inline" >
-        category 5
+        Gallery
       </div>
       </Link>
-      <Link href="book">
-      <div>
-        <button className="bg-white text-black p-3 " >
-          Book
-        </button>
+      <Link href="cat5">
+      <div className="hidden sm:block xl:inline" >
+        Testimonials
       </div>
+      </Link>
+      <Link href="cat5">
+      <div className="hidden sm:block xl:inline" >
+        Career
+      </div>
+      </Link>
+      <Link href="/Contact">
+       <div className="hidden sm:block xl:inline" >
+        Contact
+       </div>
       </Link>
       </div>
     </div>
