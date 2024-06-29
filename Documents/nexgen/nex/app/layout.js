@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
+import Foot from "./components/Foot";
 
 
 export const metadata = {
@@ -11,12 +12,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="pt-1" >
+      <body  >
+        <div className="pt-1" >
         <Nav/>
+        </div>
+       
         <main>
         {children}
         </main>
+        <Foot/>
         </body>  
+       
     </html>
     
   );

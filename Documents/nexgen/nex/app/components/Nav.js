@@ -29,14 +29,17 @@ function Nav(){
     <div className=" " >
     <div className="menucard" >
       <div className="flex flex-col items-center h-full overflow-y-scroll "  >
-      <div className="p-3" > Home </div> 
+      <Link href="/">
+      <div className="p-3" > Home </div> </Link> 
       <div className="p-3"  >About us</div>
       <div className="p-3"  >
         Academic
       </div>
+      <Link href="eve">
       <div className="p-3"  >
         Events
       </div>
+      </Link>
       <div className="p-3"  >
         Gallery
       </div>
@@ -46,9 +49,11 @@ function Nav(){
       <div className="p-3"  >
         Career
         </div>
-        <div className="p-3"  >
+        <Link href="Contact">
+        <div className="p-3" >
          Contact
         </div>
+        </Link>
       </div>
     </div> </div>: null
        }
