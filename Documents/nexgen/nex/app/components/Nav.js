@@ -68,29 +68,13 @@ function Nav(){
         About us
       </div>
       </Link>
-      <Link href="cat3">
-      <div className="hidden sm:block xl:inline" >
-        Academic 
-      </div>
-      </Link>
-      <Link href="cat4">
-      <div className="hidden sm:block xl:inline" >
-        Events
-      </div>
-      </Link>
+    
+     
+      
+     
       <Link href="cat5">
       <div className="hidden sm:block xl:inline" >
-        Gallery
-      </div>
-      </Link>
-      <Link href="cat5">
-      <div className="hidden sm:block xl:inline" >
-        Testimonials
-      </div>
-      </Link>
-      <Link href="cat5">
-      <div className="hidden sm:block xl:inline" >
-        Career
+        Enquire now
       </div>
       </Link>
       <Link href="/Contact">

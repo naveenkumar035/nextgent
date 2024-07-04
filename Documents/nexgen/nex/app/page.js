@@ -2,6 +2,8 @@ import Image from "next/image";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Sports from "./components/Sports";
+import Activities from "./components/Activities";
+import Programs from "./components/Programs";
 
 
  function Home() {
@@ -15,8 +17,14 @@ import Sports from "./components/Sports";
      <section id="about" className="snap-center" >
       <About/>
      </section>
-     <section id="soprts" className="snap-center"  >
+     <section id="sports" className="snap-center"  >
       <Sports/>
+     </section>
+     <section id="activities" className="snap-start" >
+      <Activities/>
+     </section>
+     <section id="programs" className="snap-start" >
+      <Programs/>
      </section>
     
   </div>
