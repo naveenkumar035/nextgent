@@ -10,10 +10,11 @@ function About(){
         </h3>
         <div>
             <h4 className="text-4xl text-gray-600 font-semibold space-y-10 px-0 md:px-10 " >
-               here
+               Nextgen Athelete
             </h4>
             <p className="text-base text-black " >
-            To foster a healthy and active lifestyle by providing professional sports coaching and fitness training within the convenience of apartment communities.
+            
+           Nextgen Athelete is the parent company of the Prestige Group of Tennis  which was established in 2017 with the vision of nurturing tennis talent and promoting the sport among young enthusiasts in Chennai. From the very beginning, our mission has been to provide world-class tennis coaching and facilities, ensuring that our students receive the best possible training to excel in the sport.
 
             </p>
         </div>

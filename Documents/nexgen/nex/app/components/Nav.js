@@ -4,6 +4,8 @@ import React from "react";
 import { MenuIcon } from '@heroicons/react/outline';
 import {Link} from "@nextui-org/link"
 import { useState } from "react";
+import Whatsapp from "./Whatspp";
+
 
 function Nav(){
   const[show, setShow] = useState(false);
@@ -72,11 +74,13 @@ function Nav(){
      
       
      
-      <Link href="cat5">
-      <div className="hidden sm:block xl:inline" >
-        Enquire now
-      </div>
-      </Link>
+      
+      <div>
+      
+        <Whatsapp/>
+       
+       
+        </div>
       <Link href="/Contact">
        <div className="hidden sm:block xl:inline" >
         Contact

@@ -11,31 +11,31 @@ function Activities(){
         </h3>
         <div className="grid grid-cols-4 gap-5 " >
           <div  >
-          <Image src="/images/yoga.png" alt="Description of the image" width={50} height={50} className="rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn  " />
+          <Image src="/images/yoga.png" alt="Description of the image" width={50} height={50} className=" hoverAnimation rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn  " />
           </div>
           <div  >
-          <Image src="/images/jackknife.png" alt="Description of the image" width={50} height={50} className="rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
+          <Image src="/images/jackknife.png" alt="Description of the image" width={50} height={50} className=" hoverAnimation rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn  " />
           </div>
           <div  >
-          <Image src="/images/zumba.png" alt="Description of the image" width={50} height={50} className="rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
+          <Image src="/images/zumba.png" alt="Description of the image" width={50} height={50} className=" hoverAnimation rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
           </div>
           <div  >
-          <Image src="/images/pilates.png" alt="Description of the image" width={50} height={50} className="rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
+          <Image src="/images/pilates.png" alt="Description of the image" width={50} height={50} className=" hoverAnimation rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
           </div>
           <div  >
-          <Image src="/images/hiit.png" alt="Description of the image" width={50} height={50} className="rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
+          <Image src="/images/hiit.png" alt="Description of the image" width={50} height={50} className=" hoverAnimation rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
           </div>
           <div  >
-          <Image src="/images/military-camp.png" alt="Description of the image" width={50} height={50} className="rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
+          <Image src="/images/military-camp.png" alt="Description of the image" width={50} height={50} className=" hoverAnimation rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
           </div>
           <div  >
-          <Image src="/images/leadership.png" alt="Description of the image" width={50} height={50} className="rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn  " />
+          <Image src="/images/leadership.png" alt="Description of the image" width={50} height={50} className=" hoverAnimation rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn  " />
           </div>
           <div  >
-          <Image src="/images/strenght.png" alt="Description of the image" width={50} height={50} className="rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
+          <Image src="/images/strenght.png" alt="Description of the image" width={50} height={50} className=" hoverAnimation rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
           </div>
           <div  >
-          <Image src="/images/endurance.png" alt="Description of the image" width={50} height={50} className="rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
+          <Image src="/images/endurance.png" alt="Description of the image" width={50} height={50} className=" hoverAnimation rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
           </div>
           
           

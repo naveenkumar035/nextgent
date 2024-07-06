@@ -13,7 +13,7 @@ function Programs(){
         <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 " >
          {programs.map((program)=>(
             <div
-            key={program} 
+            
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen " >
               <Image src="/images/colorful-design-with-spiral-design_188544-9588.avif " alt="Description of the image" width={350} height={350} />
               </div>
