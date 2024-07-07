@@ -1,18 +1,33 @@
 "use client";
 
 import React from "react";
-import { MenuIcon } from '@heroicons/react/outline';
 import {Link} from "@nextui-org/link"
 import { useState } from "react";
 import Whatsapp from "./Whatspp";
+import { MdMessage } from 'react-icons/md';
+import { Modal } from "antd";
+
 
 
 function Nav(){
   const[show, setShow] = useState(false);
+ 
+  const [ open,setOpen ] = useState(false);
+  const [confirmLoading, setConfirmLoading] =  useState(false);
+
 
   const handlemenu = () => {
     setShow(!show);
   }
+
+  const modelen = (e) => {
+    setOpen(!open);
+ }
+
+ const handleCancel = () => {
+  console.log('Clicked cancel button');
+  setOpen(false);
+};
 
     return(
       <>
@@ -25,67 +40,82 @@ function Nav(){
       </div>
       <div className=" flex items-center  space-x-3 lg:hidden " >
         <div className="h-6 w-6 text-white">
-        <MenuIcon onClick={handlemenu} />
-        </div>
-        {show ?  
-    <div className=" " >
-    <div className="menucard" >
-      <div className="flex flex-col items-center h-full overflow-y-scroll "  >
-      <Link href="/">
-      <div className="p-3" > Home </div> </Link> 
-      <div className="p-3"  >About us</div>
-      <div className="p-3"  >
-        Academic
+        <MdMessage onClick={modelen} />
+        </div> 
+      
       </div>
-      <Link href="eve">
-      <div className="p-3"  >
-        Events
-      </div>
-      </Link>
-      <div className="p-3"  >
-        Gallery
-      </div>
-      <div className="p-3"  >
-        Testimonials
-      </div>
-      <div className="p-3"  >
-        Career
-        </div>
-        <Link href="Contact">
-        <div className="p-3" >
-         Contact
-        </div>
-        </Link>
-      </div>
-    </div> </div>: null
-       }
-      </div>
+     
       <Link href="/">
       <div className="hidden sm:block xl:inline" >
         Home
       </div>
       </Link>
-      <Link href="cat2">
+      <Link href="About">
       <div className="hidden sm:block xl:inline" >
         About us
       </div>
       </Link>
-    
-     
-      
-     
-      
       <div>
-      
         <Whatsapp/>
-       
-       
         </div>
-      <Link href="/Contact">
-       <div className="hidden sm:block xl:inline" >
+        <div className="hidden sm:block xl:inline" onClick={modelen} >
         Contact
        </div>
-      </Link>
+       <Modal
+        centered
+        confirmLoading={confirmLoading}
+        onCancel={handleCancel}
+        open={open}
+        footer={[
+                    <button 
+                           className="bg-black text-white rounded-full px-4
+                          py-1.5 font-bold shadow-md hover:bg-black 
+                          disabled:hover:bg-grey disabled:opacity-50
+                          disabled:cursor-default"
+                        
+                         
+                        >
+                            Submit
+                        </button>
+        ]}
+      >
+         <h1 className="  text-black justify-center items-center text-center" >
+      Provide your Information
+    </h1>
+    <div className="p-3" >
+    <form>
+        <div className="p-2" >
+        <input
+           className="mt-1 block w-1/4 p-2 border border-gray-300 rounded-md text-black "
+           placeholder="Name"
+        />
+        </div>
+        <div className="p-2" >
+            <input 
+             className="mt-1 block w-1/4 p-2 border border-gray-300 rounded-md text-black "
+             placeholder="Email"
+             />
+        </div>
+        <div className="p-2" >
+            <input 
+             className="mt-1 block w-1/4 p-2 border border-gray-300 rounded-md text-black "
+             placeholder="Phone"
+             />
+        </div>
+        <div className="p-1" >
+            <input 
+             className="mt-1 block w-1/2  p-10 border border-gray-300 rounded-md text-black "
+             placeholder="Message"
+             />
+        </div>
+    
+    </form>
+    </div>
+       
+       
+        
+      </Modal>
+
       </div>
     </div>
    
