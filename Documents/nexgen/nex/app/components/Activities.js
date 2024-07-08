@@ -37,7 +37,7 @@ function Activities(){
           <div  >
           <Image src="/images/endurance.png" alt="Description of the image" width={50} height={50} className=" hoverAnimation rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn " />
           </div>
-          
+         
           
         </div>
         </div>

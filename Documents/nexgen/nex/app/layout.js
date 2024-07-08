@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
+import Foot from "./components/Foot";
+
 
 
 
@@ -20,7 +22,7 @@ export default function RootLayout({ children }) {
         <main>
         {children}
         </main>
-     
+        <Foot/>
         </body>  
        
     </html>

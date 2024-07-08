@@ -6,6 +6,7 @@ import { useState } from "react";
 import Whatsapp from "./Whatspp";
 import { MdMessage } from 'react-icons/md';
 import { Modal } from "antd";
+import Image from "next/image";
 
 
 
@@ -34,6 +35,9 @@ function Nav(){
     <div className="bg-[#333536] p-3 " >      
      <div className="flex justify-between items-center max-w-screen-xl mx-auto">
       <div className="flex items-center space-x-3 border-r border-white pr-3">
+      <div className="p-2" >
+        <Image src="/images/whitelogo.png" alt="Description of the image" width={30} height={30}/>
+        </div>
       <h1 className="  text-white  p-3 " >
         NextGen Athlete
       </h1>

@@ -16,16 +16,16 @@ function Sports(){
          <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500  text-2xl " > 
         Sports
         </h3>
-        <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-madatory " >
+        <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-madatory mt-20 " >
         <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink w-500px md:w-[600px] xl:w-[900px] snap-center bg-[#333536] p-3 " >
        
          
           <Image src="/images/racquet.png" alt="Description of the image" width={50} height={50}  />
           <div >
-          <h4>
+          <h4 className="font-bold" >
           Racquet Sports
           </h4>
-          <ul className="list-disc space-y-4 ml-5 text-lg " >
+          <ul className="list-disc space-y-4 ml-5  " >
                <li>Tennis</li>
                <li>
                Badminton
@@ -49,10 +49,10 @@ function Sports(){
          
           <Image src="/images/water-glasses.png" alt="Description of the image" width={50} height={50} className="rounded-full object-cover object-center " />
           <div>
-          <h4>
+          <h4 className="font-bold" >
           Aquatic Sports
           </h4>
-          <ul  className="list-disc space-y-4 ml-5 text-lg "  >
+          <ul  className="list-disc space-y-4 ml-5  "  >
             <li>
             Swimming
             </li>
@@ -77,10 +77,10 @@ function Sports(){
          
           <Image src="/images/teamwork.png" alt="Description of the image" width={50} height={50}  />
           <div>
-          <h4>
+          <h4 className="font-bold" >
           Team Sports
           </h4>
-          <ul  className="list-disc space-y-4 ml-5 text-lg " >
+          <ul  className="list-disc space-y-4 ml-5  " >
             <li>
             Basketball
             </li>
@@ -102,10 +102,10 @@ function Sports(){
          
           <Image src="/images/tickets.png" alt="Description of the image" width={50} height={50}  />
           <div>
-          <h4>
+          <h4 className="font-bold" >
           Individual Sports
           </h4>
-          <ul  className="list-disc space-y-4 ml-5 text-lg " >
+          <ul  className="list-disc space-y-4 ml-5  " >
             <li>
             Gymnastics
             </li>
@@ -116,14 +116,9 @@ function Sports(){
             Martial Arts (Karate, Taekwondo, Judo)
             </li>
             <li>
-            Boxing
+            Boxing ,Fencning and Archery
             </li>
-            <li>
-            Fencing
-            </li>
-            <li>
-            Archery
-            </li>
+            
           </ul>
          </div>
          
