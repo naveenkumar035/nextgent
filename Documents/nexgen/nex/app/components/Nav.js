@@ -76,7 +76,7 @@ function Nav(){
                           py-1.5 font-bold shadow-md hover:bg-black 
                           disabled:hover:bg-grey disabled:opacity-50
                           disabled:cursor-default"
-                        
+                          key="submit" 
                          
                         >
                             Submit
