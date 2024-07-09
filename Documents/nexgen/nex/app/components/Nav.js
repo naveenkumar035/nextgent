@@ -45,7 +45,7 @@ function Nav(){
 const sendForm = async () => {
   if(loading) return;
   setLoading(true);
-  setOpen(false);
+  setOpen(!open);
   const docRef = await addDoc(collection(db,'forms'), {
  // id: session.user.uid,
  // username: session.user.name,
