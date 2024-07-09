@@ -5,13 +5,26 @@ import {Link} from "@nextui-org/link"
 import { useState } from "react";
 import Whatsapp from "./Whatspp";
 import { MdMessage } from 'react-icons/md';
-import { Modal } from "antd";
+import { Modal, message } from "antd";
 import Image from "next/image";
+import { 
+  addDoc,
+  collection,
+  doc,
+  serverTimestamp,
+  updateDoc,
+} from "firebase/firestore";
+import {  db, storage } from  '../../firebase'; 
 
 
 
 function Nav(){
   const[show, setShow] = useState(false);
+  const[nam , setNam] = useState('');
+  const[email , setEmail] = useState('');
+  const [ number , setNumber ] = useState('');
+  const [ message , setMessage  ] = useState('');
+  const [ loading , setLoading] = useState(false);
  
   const [ open,setOpen ] = useState(false);
   const [confirmLoading, setConfirmLoading] =  useState(false);
@@ -29,7 +42,21 @@ function Nav(){
   console.log('Clicked cancel button');
   setOpen(false);
 };
-
+const sendForm = async () => {
+  if(loading) return;
+  setLoading(true);
+  setOpen(false);
+  const docRef = await addDoc(collection(db,'forms'), {
+ // id: session.user.uid,
+ // username: session.user.name,
+  //userImg: session.user.image,
+ // tag: session.user.tag,
+  email: email,
+  message: message,
+  phone: number,
+  name : nam,
+  timestamp: serverTimestamp(),       
+  });    }
     return(
       <>
     <div className="bg-[#333536] p-3 " >      
@@ -77,7 +104,7 @@ function Nav(){
                           disabled:hover:bg-grey disabled:opacity-50
                           disabled:cursor-default"
                           key="submit" 
-                         
+                         onClick={sendForm}
                         >
                             Submit
                         </button>
@@ -90,24 +117,32 @@ function Nav(){
     <form>
         <div className="p-2" >
         <input
+        value={nam}
+        onChange={(e) => setNam(e.target.value) }
            className="mt-1 block w-1/4 p-2 border border-gray-300 rounded-md text-black "
            placeholder="Name"
         />
         </div>
         <div className="p-2" >
             <input 
+            value={email}
+            onChange={(e) => setEmail(e.target.value) }
              className="mt-1 block w-1/4 p-2 border border-gray-300 rounded-md text-black "
              placeholder="Email"
              />
         </div>
         <div className="p-2" >
             <input 
+            value={number}
+            onChange={(e)=> setNumber(e.target.value) }
              className="mt-1 block w-1/4 p-2 border border-gray-300 rounded-md text-black "
              placeholder="Phone"
              />
         </div>
         <div className="p-1" >
             <input 
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
              className="mt-1 block w-1/2  p-10 border border-gray-300 rounded-md text-black "
              placeholder="Message"
              />
