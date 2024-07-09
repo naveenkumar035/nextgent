@@ -13,7 +13,7 @@ function Programs(){
         <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 mt-10  " >
         
             <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen " >
-            <Image src="/images/medal.png " alt="Description of the image" width={200} height={200} />
+            <Image src="/images/medal.png" alt="Description of the image" width={200} height={200} />
             <h4 className="text-4xl text-gray-600 font-semibold space-y-10 px-0 md:px-10 " >
                Beginner
             </h4>
@@ -22,7 +22,7 @@ function Programs(){
             </p>
             </div>
             <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen " >
-            <Image src="/images/medal-2.png " alt="Description of the image" width={200} height={200} />
+            <Image src="/images/medal-2.png" alt="Description of the image" width={200} height={200} />
             <h4 className="text-4xl text-gray-600 font-semibold space-y-10 px-0 md:px-10 " >
                Intermediate
             </h4>
@@ -32,7 +32,7 @@ function Programs(){
             </p>
             </div>
             <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen " >
-            <Image src="/images/reward.png " alt="Description of the image" width={200} height={200} />
+            <Image src="/images/reward.png" alt="Description of the image" width={200} height={200} />
             <h4 className="text-4xl text-gray-600 font-semibold space-y-10 px-0 md:px-10 " >
                Advanced
             </h4>
@@ -41,7 +41,7 @@ function Programs(){
             </p>
             </div>
             <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen " >
-            <Image src="/images/shield.png " alt="Description of the image" width={200} height={200} />
+            <Image src="/images/shield.png" alt="Description of the image" width={200} height={200} />
             <h4 className="text-4xl text-gray-600 font-semibold space-y-10 px-0 md:px-10 " >
                Elite
             </h4>

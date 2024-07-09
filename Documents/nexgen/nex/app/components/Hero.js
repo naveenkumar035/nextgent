@@ -20,7 +20,7 @@ function Hero(){
             <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden " >
                 <Background/>
                 <div>
-                <Image src="/images/bluehigh.png " alt="Description of the image" width={100} height={100} />
+                <Image src="/images/bluehigh.png" alt="Description of the image" width={100} height={100} />
                 </div>
                
 
