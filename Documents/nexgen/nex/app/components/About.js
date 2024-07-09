@@ -10,7 +10,7 @@ function About(){
         About
         </h3>
         <div  >
-        <Image src="/images/prestige.png" alt="Description of the image" width={550} height={550} />
+        <Image src="/images/prestige.png" alt="Description of the image" width={550} height={550} className="mt-40" />
         </div>
     
         <div>
