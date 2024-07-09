@@ -11,7 +11,7 @@ function Activities(){
         </h3>
         <div className="grid grid-cols-4 gap-5 " >
           <div  >
-          <Image src="/images/yoga.png" alt="Description of the image" width={50} height={50} className=" hoverAnimation rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn  " />
+          <Image src="/images/yoga-2.png" alt="Description of the image" width={50} height={50} className=" hoverAnimation rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn  " />
           </div>
           <div  >
           <Image src="/images/jackknife.png" alt="Description of the image" width={50} height={50} className=" hoverAnimation rounded-full border border-black-500 object-cover h-20 w-20 xl:w-20 xl:h-20 navbtn  " />
