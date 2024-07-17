@@ -16,7 +16,7 @@ function Whatsapp(){
       target="_blank"
       rel="noopener noreferrer"
       >
-             <FaWhatsapp className="text-2xl cursor-pointer hover:text-green-500 " />
+             <FaWhatsapp className="text-2xl cursor-pointer bg-green-500 rounded-full text-white " />
              </a>
            
            

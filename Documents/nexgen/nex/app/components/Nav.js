@@ -87,7 +87,7 @@ const sendForm = async () => {
       </div>
       </Link>
       <div>
-        <Whatsapp/>
+        <Whatsapp  />
         </div>
         <div className="hidden sm:block xl:inline" onClick={modelen} >
         Contact

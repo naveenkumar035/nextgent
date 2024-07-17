@@ -15,15 +15,12 @@ function Hero(){
       })
 
     return(
-        
-            
+      <>
             <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden " >
                 <Background/>
                 <div>
                 <Image src="/images/bluehigh.png" alt="Description of the image" width={100} height={100} />
                 </div>
-               
-
             <h1 className="text-black  font-bold   " >
             <span  >
                 <h1 className="text-black font-bold " >
@@ -33,10 +30,7 @@ function Hero(){
             </span>
           </h1>
             </div>
-         
-        
-      
-
+            </>
     )
 }
 

@@ -46,12 +46,17 @@ body {
 
 @layer components{
   .hoverAnimation{
-    @apply hover:bg-black hover:bg-opacity-10 rounded-full cursor-pointer w-[152px] h-[52px] xl:w-auto xl:h-auto xl:py-3 xl:px-4 
+    @apply hover:bg-black hover:bg-opacity-10 rounded-full cursor-pointer w-[252px] h-[52px] xl:w-auto xl:h-auto xl:py-3 xl:px-4 
     transition duration-200 ease-out;
 
 }
 .navbtn {
   @apply  h-6 md:inline-flex
+  cursor-pointer hover:scale-125
+  transition-all duration-150 ease-out;
+}
+.navcard {
+  @apply   md:inline-flex
   cursor-pointer hover:scale-125
   transition-all duration-150 ease-out;
 }
