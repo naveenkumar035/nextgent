@@ -60,5 +60,17 @@ body {
   cursor-pointer hover:scale-125
   transition-all duration-150 ease-out;
 }
+.slider-container {
+  width: 60%; /* Adjust as needed */
+}
+
+.slider-container .slick-slide {
+  padding: 10px;
+}
+
+.h-screen {
+  width: 100%; /* Adjust as needed */
+}
+
 }
 

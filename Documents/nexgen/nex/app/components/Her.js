@@ -1,25 +1,65 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
 
 function Her(){
+    const sliderSettings = {
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true
+      };
+
     return(
         <div className="flex space-x-6" >
-        <div className="h-screen flex flex-col p-20 overflow-hidden " > 
+        <div className="h-screen flex flex-col p-20 overflow-hidden sm:block hidden " > 
         <Image src="/images/free.png" alt="Description of the image" width={450} height={450} />
         </div>
-        <div className="text-black items-center justify-center text-center p-20 " >
-                  Our Vision
-Every Student-Athlete A Champion
+        <div className="slider-container mt-20  p-20 flex flex-col sm:block hidden ">
+        <Slider {...sliderSettings}>
+          <div>
+           <h1 className="text-black  " >
+            vision
+           </h1>
+           <p className="text-black" >
+           Our vision encapsulates the essence of our commitment to the holistic development of student-athletes. We aspire to see every student-athlete achieve championship status, not only in their respective sports but also in their personal and academic endeavors. This vision reflects our dedication to fostering an environment where excellence is the standard, and every individual is empowered to reach their highest potential.
+           </p>
+          </div>
+          <div>
+           <h1 className="text-black" >
+            Mission
+           </h1>
+           <p className="text-black" >
+           Our mission is to nurture student-athletes who are not only champions in their sports but also learned individuals with strong character. We aim to provide a balanced and comprehensive approach to development that encompasses academic rigor, athletic excellence, and personal growth. By focusing on the cultivation of knowledge and character, we prepare our student-athletes to excel in all areas of life, both on and off the field.
+           </p>
+          </div>
+          <div>
+            <h1 className="text-black" >
+             Our Values
+            </h1>
+            <p className="text-black" >
+            * Respect
+            * Integrity
+            * Responsibility • Excellence
+            * Resilience
+            </p>
+          </div>
+        </Slider>
+      </div>
+       <div>
+      
 
-Our Mission
-Nurturing Learned Champions With Character
-
-Our Values
-* Respect
-* Integrity
-* Responsibility • Excellence
-* Resilience
-        </div>
+       </div>
+    
         </div>
     )
 }
