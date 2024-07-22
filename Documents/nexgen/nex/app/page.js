@@ -6,7 +6,8 @@ import Programs from "./components/Programs";
 import Head from "next/head";
 import Link from 'next/link';
 import Her from "./components/Her";
-
+import Hero from "./components/Hero";
+import Heroin from "./components/Heroin";
 
  function Home() {
   return (
@@ -20,17 +21,17 @@ import Her from "./components/Her";
         </Head>
     <div className=" flex flex-col h-screen bg-white snap-y snap-mandatory overflow-scroll z-0  " >   
     
-      <section id="her" className="snap-start" >
-      <Her/>
+      <section id="heroin" className="snap-start lg:hidden " >
+      <Heroin/>
+     </section>
+     <section id="her" className="snap-start sm:block hidden " >
+       <Her/>
      </section>
      <section id="about" className="snap-center" >
       <About/>
      </section>
      <section id="sports" className="snap-center"  >
       <Sports/>
-     </section>
-     <section id="activities" className="snap-start" >
-      <Activities/>
      </section>
      <section id="programs" className="snap-start" >
       <Programs/>
