@@ -159,7 +159,7 @@ function Sports() {
         </h3>
         <div className="flex flex-col items-center space-y-5  w-full">
           <div
-            className="w-full flex space-x-5 items-center justify-center justify-between overflow-x-scroll p-10 overflow-hidden"
+            className="w-full flex space-x-5 items-center justify-center snap-center justify-between overflow-x-scroll p-10 overflow-hidden"
             ref={imageContainerRef}
           >
             {imageCardData.map((image, index) => (
@@ -177,13 +177,14 @@ function Sports() {
             ))}
            
           </div>
-          <p className="text-gray-300 p-10 sm:block hidden " >
-              click above 
-            </p>
+          <p className="text-gray-300 sm:block hidden" >
+            Click above
+          </p>
 
-          <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 mt-10" ref={cardContainerRef}>
+
+          <div className="relative w-full flex overflow-x-scroll overflow-y-hidden z-20 mt-10 overflow-hidden " ref={cardContainerRef}>
           {imageCardData.map((image, index) => (
-              <div key={index} className={`w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen ${currentIndex === index ? "block" : "hidden"}`}>
+              <div key={index} className={`w-screen flex-shrink-0  flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen ${currentIndex === index ? "block" : "hidden"}`}>
                 <Card className="col-span-12 sm:col-span-4 h-[500px] max-w-[1000px]">
                   <CardHeader className="absolute z-10 top-1 flex-col !items-start">
                   <h4 className="text-white font-medium text-large">{image.cardContent.title}</h4>
