@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowCircleRightIcon } from "@heroicons/react/solid";
 import React from "react";
 import {Link} from "@nextui-org/link"
 import { useState } from "react";
@@ -65,9 +66,16 @@ const sendForm = async () => {
       <div className="p-2" >
         <Image src="/images/whitelogo.png" alt="Description of the image" width={30} height={30}/>
         </div>
-      <h1 className="  text-white  p-3 " >
+        <Link href="/">
+       <h1 className="  text-white  p-3 " >
         NextGen Athlete
       </h1>
+      </Link>
+      <Link
+           href="About"
+           >
+           <ArrowCircleRightIcon  className="h-5 text-white  lg:hidden "/>
+           </Link>
       </div>
       <div className=" flex items-center  space-x-3 lg:hidden " >
         <div className="h-6 w-6 text-white">

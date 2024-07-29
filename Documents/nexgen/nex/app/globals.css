@@ -56,7 +56,8 @@ body {
   transition-all duration-150 ease-out;
 }
 .navcard {
-  @apply   inline-flex
+  @apply   
+  inline-flex
   cursor-pointer hover:scale-125
   transition-all duration-150 ease-out;
 }
@@ -70,6 +71,10 @@ body {
 
 .h-screen {
   width: 100%; /* Adjust as needed */
+}
+
+.card-container {
+  background-color: rgba(14, 74, 105, 0.5); /* Adjust the alpha value to set the level of transparency */
 }
 
 }

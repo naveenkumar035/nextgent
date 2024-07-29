@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
+    "@nextui-org/card": "^2.0.33",
     "@nextui-org/link": "^2.0.32",
     "@nextui-org/tooltip": "^2.0.36",
     "antd": "^5.19.1",

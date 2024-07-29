@@ -7,9 +7,9 @@ function About(){
         <div className="h-screen bg-white" >
          <div className="h-screen flex flex-col relative text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center ">
          <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500  text-2xl " > 
-        Programs
+        
         </h3>
-        <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 mt-10  " >
+        <div className="relative w-full flex overflow-x-scroll overflow-y-hidden  snap-x snap-mandatory z-20 mt-10  " >
         <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen " >
         <h4 className="text-4xl text-gray-600 font-semibold space-y-10 px-0 md:px-10">
               Journey
@@ -45,15 +45,20 @@ function About(){
 
         </div>
         <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen " >
-        <h4 className="text-4xl text-gray-600 font-semibold space-y-10 px-0 md:px-10">
+        <h4 className="text-4xl text-gray-600 font-semibold space-y-10 px-0 md:px-10  ">
               Producing Champions
            </h4>
 
            <p className="text-base text-black p-4">
                Our schools have produced numerous national and state-level tennis players who have gone on to achieve great success in various tournaments. The rigorous training programs, combined with our coaches&apos; dedication, have helped our players excel and stand out in the competitive tennis arena.
            </p>
-           <p className="text-base text-black p-4">
-               National Level Players: Several of our students have represented Tamil Nadu and other states at the national level, showcasing their talent and bringing accolades to our schools.<br />
+        </div>
+        <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen "  >
+            <h4 className="text-4xl text-gray-600 font-semibold space-y-10 px-0 md:px-10" >
+            National Level Players
+            </h4>
+           <p className="text-base text-black p-4   ">
+              Several of our students have represented Tamil Nadu and other states at the national level, showcasing their talent and bringing accolades to our schools.<br />
                State Level Players: Our players consistently perform at the highest level in state competitions, making a mark with their skill and determination.
            </p>
 

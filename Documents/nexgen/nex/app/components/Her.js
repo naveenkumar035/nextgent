@@ -27,15 +27,15 @@ function Her(){
         <div className="slider-container mt-20  p-20 flex flex-col sm:block hidden ">
         <Slider {...sliderSettings}>
           <div>
-           <h1 className="text-black  " >
-            vision
+           <h1 className="text-black font-bold " >
+            Vision
            </h1>
            <p className="text-black" >
            Our vision encapsulates the essence of our commitment to the holistic development of student-athletes. We aspire to see every student-athlete achieve championship status, not only in their respective sports but also in their personal and academic endeavors. This vision reflects our dedication to fostering an environment where excellence is the standard, and every individual is empowered to reach their highest potential.
            </p>
           </div>
           <div>
-           <h1 className="text-black" >
+           <h1 className="text-black font-bold " >
             Mission
            </h1>
            <p className="text-black" >
@@ -43,13 +43,13 @@ function Her(){
            </p>
           </div>
           <div>
-            <h1 className="text-black" >
+            <h1 className="text-black font-bold " >
              Our Values
             </h1>
             <p className="text-black" >
-            * Respect
-            * Integrity
-            * Responsibility • Excellence
+            * Respect<br/>
+            * Integrity <br/>
+            * Responsibility • Excellence <br/>
             * Resilience
             </p>
           </div>

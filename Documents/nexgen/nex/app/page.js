@@ -13,9 +13,8 @@ import Heroin from "./components/Heroin";
   return (
     <>
     <div>
-   
+    <Link rel="shortcut icon" href="/favicon/favicon.ico" />
      <Head>
-     <link rel="icon" href="/nex.png" />
         <title>NextGen</title>
         <meta name="description" content="As we look to the future, we aim to expand our reach and continue our tradition of excellence in tennis coaching. We are committed to discovering and nurturing the next generation of tennis champions, providing them with the resources and training they need to succeed on both national and international stages." />
         </Head>
