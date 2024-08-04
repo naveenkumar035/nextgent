@@ -6,7 +6,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 
 function Whatsapp(){
-    const phoneNumber = '7904815658'; // Replace with the actual phone number
+    const phoneNumber = '9698465662'; // Replace with the actual phone number
     const message = encodeURIComponent('Hello, I would like to enquire about...');
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
     return(

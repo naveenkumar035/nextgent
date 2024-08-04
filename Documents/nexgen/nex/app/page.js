@@ -2,12 +2,14 @@ import Image from "next/image";
 import About from "./components/About";
 import Sports from "./components/Sports";
 import Activities from "./components/Activities";
-import Programs from "./components/Programs";
+import Program from "./components/Program";
 import Head from "next/head";
 import Link from 'next/link';
 import Her from "./components/Her";
 import Hero from "./components/Hero";
 import Heroin from "./components/Heroin";
+import He from "./components/He";
+import Summa from "./components/Summa";
 
  function Home() {
   return (
@@ -23,6 +25,9 @@ import Heroin from "./components/Heroin";
       <section id="heroin" className="snap-start lg:hidden " >
       <Heroin/>
      </section>
+     <section id="summa" className="snap-start sm:block hidden ">
+      <Summa/>
+     </section>
      <section id="her" className="snap-start sm:block hidden " >
        <Her/>
      </section>
@@ -32,8 +37,8 @@ import Heroin from "./components/Heroin";
      <section id="sports" className="snap-center"  >
       <Sports/>
      </section>
-     <section id="programs" className="snap-start" >
-      <Programs/>
+     <section id="program" className="snap-start" >
+      <Program/>
      </section>
     
   </div>

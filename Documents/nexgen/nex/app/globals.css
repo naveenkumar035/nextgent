@@ -76,6 +76,9 @@ body {
 .card-container {
   background-color: rgba(14, 74, 105, 0.5); /* Adjust the alpha value to set the level of transparency */
 }
+.color{
+  border: 1px solid #111037;
+}
 
 }
 

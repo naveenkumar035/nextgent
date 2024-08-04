@@ -20,37 +20,36 @@ function Her(){
       };
 
     return(
+      <>
         <div className="flex space-x-6" >
         <div className="h-screen flex flex-col p-20 overflow-hidden sm:block hidden " > 
         <Image src="/images/free.png" alt="Description of the image" width={450} height={450} />
         </div>
+        
         <div className="slider-container mt-20  p-20 flex flex-col sm:block hidden ">
         <Slider {...sliderSettings}>
           <div>
-           <h1 className="text-black font-bold " >
+           <h1 className=" text-5xl text-red-600  font-bold " >
             Vision
            </h1>
-           <p className="text-black" >
-           Our vision encapsulates the essence of our commitment to the holistic development of student-athletes. We aspire to see every student-athlete achieve championship status, not only in their respective sports but also in their personal and academic endeavors. This vision reflects our dedication to fostering an environment where excellence is the standard, and every individual is empowered to reach their highest potential.
-           </p>
+           <div className="text-black p-2 " >
+           Empowering Every Student-Athlete to Become a International Champion
+           </div>
           </div>
           <div>
-           <h1 className="text-black font-bold " >
+           <h1 className="text-5xl text-red-600 font-bold " >
             Mission
            </h1>
            <p className="text-black" >
-           Our mission is to nurture student-athletes who are not only champions in their sports but also learned individuals with strong character. We aim to provide a balanced and comprehensive approach to development that encompasses academic rigor, athletic excellence, and personal growth. By focusing on the cultivation of knowledge and character, we prepare our student-athletes to excel in all areas of life, both on and off the field.
+           Cultivating Global Champions with Knowledge and Character
            </p>
           </div>
           <div>
-            <h1 className="text-black font-bold " >
-             Our Values
+            <h1 className="text-5xl text-red-600 font-bold " >
+            Our Commitment
             </h1>
             <p className="text-black" >
-            * Respect<br/>
-            * Integrity <br/>
-            * Responsibility • Excellence <br/>
-            * Resilience
+            Transforming India into a sports powerhouse by developing talented athletes and inspiring champions for tomorrow.
             </p>
           </div>
         </Slider>
@@ -61,6 +60,7 @@ function Her(){
        </div>
     
         </div>
+        </>
     )
 }
 

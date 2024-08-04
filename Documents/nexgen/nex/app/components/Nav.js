@@ -67,8 +67,8 @@ const sendForm = async () => {
         <Image src="/images/whitelogo.png" alt="Description of the image" width={30} height={30}/>
         </div>
         <Link href="/">
-       <h1 className="  text-white  p-3 " >
-        NextGen Athlete
+       <h1 className=" lg:hidden text-white font-bold p-3 " >
+        NexGen <span className="text-red-600 font-bold " > Athlete </span>
       </h1>
       </Link>
       <Link
@@ -85,19 +85,19 @@ const sendForm = async () => {
       </div>
      
       <Link href="/">
-      <div className="hidden sm:block xl:inline" >
+      <div className=" text-white hidden sm:block xl:inline" >
         Home
       </div>
       </Link>
       <Link href="About">
-      <div className="hidden sm:block xl:inline" >
+      <div className=" text-white hidden sm:block xl:inline" >
         About us
       </div>
       </Link>
       <div>
         <Whatsapp  />
         </div>
-        <div className="hidden sm:block xl:inline" onClick={modelen} >
+        <div className=" text-white hidden sm:block xl:inline" onClick={modelen} >
         Contact
        </div>
        <Modal

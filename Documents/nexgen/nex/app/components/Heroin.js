@@ -22,7 +22,7 @@ function Heroin(){
                 <Hero/>
             </div>
             <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen " >
-           <h4 className="text-4xl text-gray-600 font-semibold space-y-10 px-0 md:px-10">
+           <h4 className="text-4xl text-red-600  font-semibold space-y-10 px-0 md:px-10">
              Mission
            </h4>
 
@@ -33,7 +33,7 @@ function Heroin(){
 
             </div>
             <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen " >
-           <h4 className="text-4xl text-gray-600 font-semibold space-y-10 px-0 md:px-10">
+           <h4 className="text-4xl text-red-600  font-semibold space-y-10 px-0 md:px-10">
              Vision
            </h4>
 

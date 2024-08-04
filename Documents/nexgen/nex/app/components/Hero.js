@@ -11,7 +11,7 @@ import Background from "./Background";
 
 function Hero(){
     const [text] = useTypewriter({
-        words: [' Skills', 'Generations', 'Motivation', 'Lifestyle'],
+        words: ['Athlete'],
         loop: true,
         delaySpeed: 2000,
       })
@@ -26,9 +26,10 @@ function Hero(){
             <h1 className="text-black  font-bold   " >
             <span  >
                 <h1 className="text-black font-bold " >
-                    Inheriting
+                    NexGen
                 </h1>
-              {text}
+                <span className="text-red-600" > {text} </span>
+             
             </span>
           </h1>
             </div>
