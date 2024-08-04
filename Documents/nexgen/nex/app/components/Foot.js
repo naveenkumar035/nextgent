@@ -15,12 +15,28 @@ function Foot(){
                 <p className="text-white-800 font-bold text-3xl pb-6 " >
                       Next <span className="text-red-600" > Gen </span>
                 </p>
-                <div className="flex gap-6 pb-5" >
+                <div className="flex gap-6 pb-5" > <a
+      href="https://www.instagram.com/nexgen_athlete_?igsh=NGx0a2hsOWdncWRs"
+      target="_blank"
+      rel="noopener noreferrer"
+      >
                  <FaInstagram className="text-2xl cursor-pointer hover:text-red-600 "/>
+                 </a>
+                 <a
+      href="https://www.linkedin.com/company/nexgenathlete/"
+      target="_blank"
+      rel="noopener noreferrer"
+      >
                  <FaLinkedin  className="text-2xl cursor-pointer hover:text-red-600 "/>
-                 <FaTwitter  className="text-2xl cursor-pointer hover:text-red-600 "/>
-                 <FaYoutube className="text-2xl cursor-pointer hover:text-red-600 "/>
+                 </a>
+                 <a
+      href="https://www.facebook.com/profile.php?id=61564069760490&mibextid=ZbWKwL"
+      target="_blank"
+      rel="noopener noreferrer"
+      >
+                
                  <FaFacebook className="text-2xl cursor-pointer hover:text-red-600 "/>
+                 </a>
                 </div>
             </ul>
          </div>
