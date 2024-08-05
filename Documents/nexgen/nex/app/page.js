@@ -10,6 +10,7 @@ import Hero from "./components/Hero";
 import Heroin from "./components/Heroin";
 import He from "./components/He";
 import Summa from "./components/Summa";
+import Programs from "./components/Programs";
 
  function Home() {
   return (
@@ -37,8 +38,11 @@ import Summa from "./components/Summa";
      <section id="sports" className="snap-center"  >
       <Sports/>
      </section>
-     <section id="program" className="snap-start" >
+     <section id="program" className="snap-start sm:block hidden" >
       <Program/>
+     </section>
+     <section id="programs" className="snap-start lg:hidden " >
+      <Programs/>
      </section>
     
   </div>

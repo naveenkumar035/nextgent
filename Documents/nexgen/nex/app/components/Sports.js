@@ -182,7 +182,7 @@ function Sports() {
           </p>
 
 
-          <div className="relative w-full flex overflow-x-scroll overflow-y-hidden z-20 mt-10 overflow-hidden " ref={cardContainerRef}>
+          <div className="relative w-full flex items-center justify-center overflow-y-hidden z-20 mt-10 overflow-hidden " ref={cardContainerRef}>
           {imageCardData.map((image, index) => (
               <div key={index} className={`w-screen flex-shrink-0  flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen ${currentIndex === index ? "block" : "hidden"}`}>
                 <Card className="col-span-12 sm:col-span-4 h-[500px] max-w-[1000px]">
