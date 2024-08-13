@@ -24,6 +24,14 @@ def calculate_rsi(series, period=14):
     rsi = 100 - (100 / (1 + rs))
     return rsi
 
+# Calculate Bollinger Bands
+def calculate_bollinger_bands(df, window=20, num_std_dev=2):
+    df['SMA'] = df['close'].rolling(window=window).mean()
+    df['STD'] = df['close'].rolling(window=window).std()
+    df['Upper Band'] = df['SMA'] + (df['STD'] * num_std_dev)
+    df['Lower Band'] = df['SMA'] - (df['STD'] * num_std_dev)
+    return df
+
 # Identify Support and Resistance Levels
 def identify_support_resistance(df, window=20, threshold=0.02):
     df['Support'] = df['low'].rolling(window=window, min_periods=1).min()
@@ -103,8 +111,45 @@ def backtest_support_resistance(df):
 
     return profit, profit_ratio, accuracy_percentage
 
+# Define backtest function for Bollinger Bands
+def backtest_bollinger_bands(df):
+    positions = []
+    correct_signals = 0
+    total_trades = 0
+    profit = 0
+    buy_price = None
+
+    for i in range(len(df)):
+        if df['close'].iloc[i] < df['Lower Band'].iloc[i]:
+            positions.append('Buy')
+            buy_price = df['close'].iloc[i]
+        elif df['close'].iloc[i] > df['Upper Band'].iloc[i]:
+            positions.append('Sell')
+            if buy_price is not None:
+                sell_price = df['close'].iloc[i]
+                profit += (sell_price - buy_price)
+                total_trades += 1
+                if sell_price > buy_price:
+                    correct_signals += 1
+                buy_price = None  # Reset after a trade is executed
+        else:
+            positions.append('Hold')
+
+    df['Bollinger Bands Position'] = positions
+
+    # Calculate profit ratio
+    profit_ratio = profit / df['close'].iloc[0] * 100
+
+    # Calculate accuracy
+    accuracy_percentage = (correct_signals / total_trades * 100) if total_trades > 0 else 0
+
+    return profit, profit_ratio, accuracy_percentage
+
 # Calculate RSI indicator
 df['RSI'] = calculate_rsi(df['close'])
+
+# Calculate Bollinger Bands
+df = calculate_bollinger_bands(df)
 
 # Identify Support and Resistance levels
 df = identify_support_resistance(df)
@@ -112,13 +157,15 @@ df = identify_support_resistance(df)
 # Backtest all strategies
 rsi_profit, rsi_profit_ratio, rsi_accuracy_percentage = backtest_rsi(df)
 support_resistance_profit, support_resistance_profit_ratio, support_resistance_accuracy_percentage = backtest_support_resistance(df)
+bollinger_bands_profit, bollinger_bands_profit_ratio, bollinger_bands_accuracy_percentage = backtest_bollinger_bands(df)
 
 # Calculate combined results
-combined_profit = rsi_profit + support_resistance_profit
+combined_profit = rsi_profit + support_resistance_profit + bollinger_bands_profit
 combined_profit_ratio = (combined_profit / df['close'].iloc[0]) * 100
-combined_accuracy_percentage = (rsi_accuracy_percentage + support_resistance_accuracy_percentage) / 2
+combined_accuracy_percentage = (rsi_accuracy_percentage + support_resistance_accuracy_percentage + bollinger_bands_accuracy_percentage) / 3
 
 # Print results
 print(f"RSI - Total Profit: {rsi_profit:.2f}, Profit Ratio: {rsi_profit_ratio:.2f}%, Accuracy Percentage: {rsi_accuracy_percentage:.2f}%")
 print(f"Support/Resistance - Total Profit: {support_resistance_profit:.2f}, Profit Ratio: {support_resistance_profit_ratio:.2f}%, Accuracy Percentage: {support_resistance_accuracy_percentage:.2f}%")
+print(f"Bollinger Bands - Total Profit: {bollinger_bands_profit:.2f}, Profit Ratio: {bollinger_bands_profit_ratio:.2f}%, Accuracy Percentage: {bollinger_bands_accuracy_percentage:.2f}%")
 print(f"Combined - Total Profit: {combined_profit:.2f}, Profit Ratio: {combined_profit_ratio:.2f}%, Combined Accuracy Percentage: {combined_accuracy_percentage:.2f}%")
