@@ -15,15 +15,6 @@ df = pd.DataFrame(candles, columns=["datetime", "open", "high", "low", "close", 
 # Convert datetime column to datetime type
 df["datetime"] = pd.to_datetime(df["datetime"])
 
-# Calculate RSI
-def calculate_rsi(series, period=14):
-    delta = series.diff()
-    gain = (delta.where(delta > 0, 0)).rolling(window=period).mean()
-    loss = (-delta.where(delta < 0, 0)).rolling(window=period).mean()
-    rs = gain / loss
-    rsi = 100 - (100 / (1 + rs))
-    return rsi
-
 # Calculate Bollinger Bands
 def calculate_bollinger_bands(df, window=20, num_std_dev=2):
     df['SMA'] = df['close'].rolling(window=window).mean()
@@ -43,39 +34,55 @@ def identify_support_resistance(df, window=20, threshold=0.02):
     
     return df
 
-# Define backtest function for RSI with confirmations
-def backtest_rsi_with_confirmations(df, lower_rsi=30, upper_rsi=70):
+# Calculate Fibonacci Retracements
+def calculate_fibonacci_retracements(df):
+    max_high = df['high'].max()
+    min_low = df['low'].min()
+    range = max_high - min_low
+    
+    # Define Fibonacci retracement levels
+    retracement_levels = [0.236, 0.382, 0.618]
+    
+    for level in retracement_levels:
+        df[f'Fibonacci Level {int(level*100)}'] = max_high - (range * level)
+    
+    return df
+
+# Define backtest function for combined strategy
+def backtest_combined_strategy(df, lower_rsi=30, upper_rsi=70, adx_threshold=25, di_diff_threshold=10):
     positions = []
     correct_signals = 0
     total_trades = 0
     profit = 0
     buy_price = None
 
+    # Calculate indicators
+    df = calculate_bollinger_bands(df)
+    df = identify_support_resistance(df)
+    df = calculate_fibonacci_retracements(df)
+    
     for i in range(len(df)):
-        if df['RSI'].iloc[i] < lower_rsi:
-            # Buy signal, but only if supported by Support and Bollinger Bands
-            if df['Support Valid'].iloc[i] and df['close'].iloc[i] < df['Lower Band'].iloc[i]:
-                positions.append('Buy')
-                buy_price = df['close'].iloc[i]
-            else:
-                positions.append('Hold')
-        elif df['RSI'].iloc[i] > upper_rsi:
-            # Sell signal, but only if supported by Resistance and Bollinger Bands
-            if df['Resistance Valid'].iloc[i] and df['close'].iloc[i] > df['Upper Band'].iloc[i]:
-                positions.append('Sell')
-                if buy_price is not None:
-                    sell_price = df['close'].iloc[i]
-                    profit += (sell_price - buy_price)
-                    total_trades += 1
-                    if sell_price > buy_price:
-                        correct_signals += 1
-                    buy_price = None  # Reset after a trade is executed
-            else:
-                positions.append('Hold')
+        if df['close'].iloc[i] < df['Lower Band'].iloc[i] and df['Support Valid'].iloc[i]:
+            # Buy signal if the close price is below the Lower Band and at a valid support level
+            positions.append('Buy')
+            buy_price = df['close'].iloc[i]
+        elif df['close'].iloc[i] > df['Upper Band'].iloc[i] and df['Resistance Valid'].iloc[i]:
+            # Sell signal if the close price is above the Upper Band and at a valid resistance level
+            positions.append('Sell')
+            if buy_price is not None:
+                sell_price = df['close'].iloc[i]
+                profit += (sell_price - buy_price)
+                total_trades += 1
+
+                # Check if the trade was profitable
+                if sell_price > buy_price:
+                    correct_signals += 1
+
+                buy_price = None  # Reset after a trade is executed
         else:
             positions.append('Hold')
-    
-    df['RSI with Confirmation Position'] = positions
+
+    df['Combined Position'] = positions
 
     # Calculate profit ratio
     profit_ratio = profit / df['close'].iloc[0] * 100
@@ -85,17 +92,10 @@ def backtest_rsi_with_confirmations(df, lower_rsi=30, upper_rsi=70):
 
     return profit, profit_ratio, accuracy_percentage
 
-# Calculate RSI indicator
-df['RSI'] = calculate_rsi(df['close'])
-
-# Calculate Bollinger Bands
-df = calculate_bollinger_bands(df)
-
-# Identify Support and Resistance levels
-df = identify_support_resistance(df)
-
-# Backtest the RSI strategy with confirmations
-profit, profit_ratio, accuracy_percentage = backtest_rsi_with_confirmations(df)
+# Backtest the combined strategy with Bollinger Bands, Support/Resistance, and Fibonacci Retracements
+profit, profit_ratio, accuracy_percentage = backtest_combined_strategy(df)
 
 # Print results
-print(f"RSI with Confirmation - Total Profit: {profit:.2f}, Profit Ratio: {profit_ratio:.2f}%, Accuracy Percentage: {accuracy_percentage:.2f}%")
+print(f"Combined Strategy - Total Profit: {profit:.2f}")
+print(f"Profit Ratio: {profit_ratio:.2f}%")
+print(f"Accuracy Percentage: {accuracy_percentage:.2f}%")
