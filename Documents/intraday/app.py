@@ -55,6 +55,8 @@ def backtest_combined_strategy(df, lower_rsi=30, upper_rsi=70, adx_threshold=25,
     total_trades = 0
     profit = 0
     buy_price = None
+    target_price_38 = None
+    target_price_61 = None
 
     # Calculate indicators
     df = calculate_bollinger_bands(df)
@@ -62,23 +64,31 @@ def backtest_combined_strategy(df, lower_rsi=30, upper_rsi=70, adx_threshold=25,
     df = calculate_fibonacci_retracements(df)
     
     for i in range(len(df)):
-        if df['close'].iloc[i] < df['Lower Band'].iloc[i] and df['Support Valid'].iloc[i]:
-            # Buy signal if the close price is below the Lower Band and at a valid support level
+        # Check for a Buy signal
+        if df['close'].iloc[i] < df['Lower Band'].iloc[i] and df['Support Valid'].iloc[i] and df['close'].iloc[i] <= df['Fibonacci Level 61'].iloc[i]:
+            # Buy signal if the close price is below the Lower Band, at a valid support level, and near the 61.8% Fibonacci level
             positions.append('Buy')
             buy_price = df['close'].iloc[i]
-        elif df['close'].iloc[i] > df['Upper Band'].iloc[i] and df['Resistance Valid'].iloc[i]:
-            # Sell signal if the close price is above the Upper Band and at a valid resistance level
+            # Set target prices based on Fibonacci levels
+            target_price_38 = df['Fibonacci Level 38'].iloc[i]
+            target_price_61 = df['Fibonacci Level 61'].iloc[i]
+        
+        # Check for a Sell signal
+        elif buy_price is not None and (df['close'].iloc[i] >= target_price_38 or df['close'].iloc[i] >= target_price_61):
+            # Sell signal if the close price reaches or exceeds the 38.2% or 61.8% Fibonacci level
             positions.append('Sell')
-            if buy_price is not None:
-                sell_price = df['close'].iloc[i]
-                profit += (sell_price - buy_price)
-                total_trades += 1
+            sell_price = df['close'].iloc[i]
+            profit += (sell_price - buy_price)
+            total_trades += 1
 
-                # Check if the trade was profitable
-                if sell_price > buy_price:
-                    correct_signals += 1
+            # Check if the trade was profitable
+            if sell_price > buy_price:
+                correct_signals += 1
 
-                buy_price = None  # Reset after a trade is executed
+            buy_price = None  # Reset after a trade is executed
+            target_price_38 = None
+            target_price_61 = None
+        
         else:
             positions.append('Hold')
 
