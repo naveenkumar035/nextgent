@@ -23,6 +23,17 @@ def calculate_bollinger_bands(df, window=20, num_std_dev=2):
     df['Lower Band'] = df['SMA'] - (df['STD'] * num_std_dev)
     return df
 
+# Calculate RSI
+def calculate_rsi(df, period=14):
+    delta = df['close'].diff()
+    gain = np.where(delta > 0, delta, 0)
+    loss = np.where(delta < 0, -delta, 0)
+    avg_gain = pd.Series(gain).rolling(window=period).mean()
+    avg_loss = pd.Series(loss).rolling(window=period).mean()
+    rs = avg_gain / avg_loss
+    df['RSI'] = 100 - (100 / (1 + rs))
+    return df
+
 # Identify Support and Resistance Levels
 def identify_support_resistance(df, window=20, threshold=0.02):
     df['Support'] = df['low'].rolling(window=window, min_periods=1).min()
@@ -49,7 +60,7 @@ def calculate_fibonacci_retracements(df):
     return df
 
 # Define backtest function for combined strategy
-def backtest_combined_strategy(df, lower_rsi=30, upper_rsi=70, adx_threshold=25, di_diff_threshold=10):
+def backtest_combined_strategy(df):
     positions = []
     correct_signals = 0
     total_trades = 0
@@ -60,22 +71,23 @@ def backtest_combined_strategy(df, lower_rsi=30, upper_rsi=70, adx_threshold=25,
 
     # Calculate indicators
     df = calculate_bollinger_bands(df)
+    df = calculate_rsi(df)
     df = identify_support_resistance(df)
     df = calculate_fibonacci_retracements(df)
     
     for i in range(len(df)):
-        # Check for a Buy signal
-        if df['close'].iloc[i] < df['Lower Band'].iloc[i] and df['Support Valid'].iloc[i] and df['close'].iloc[i] <= df['Fibonacci Level 61'].iloc[i]:
-            # Buy signal if the close price is below the Lower Band, at a valid support level, and near the 61.8% Fibonacci level
+        # Check for a Buy signal (based on Support/Resistance and Fibonacci Levels only)
+        if df['close'].iloc[i] <= df['Fibonacci Level 61'].iloc[i] and df['Support Valid'].iloc[i]:
+            # Buy signal if the close price is near the 61.8% Fibonacci level and at a valid support level
             positions.append('Buy')
             buy_price = df['close'].iloc[i]
             # Set target prices based on Fibonacci levels
             target_price_38 = df['Fibonacci Level 38'].iloc[i]
             target_price_61 = df['Fibonacci Level 61'].iloc[i]
         
-        # Check for a Sell signal
-        elif buy_price is not None and (df['close'].iloc[i] >= target_price_38 or df['close'].iloc[i] >= target_price_61):
-            # Sell signal if the close price reaches or exceeds the 38.2% or 61.8% Fibonacci level
+        # Check for a Sell signal (using Bollinger Bands and RSI for exit criteria)
+        elif buy_price is not None and (df['close'].iloc[i] >= target_price_38 or df['RSI'].iloc[i] > 70 or df['close'].iloc[i] > df['Upper Band'].iloc[i]):
+            # Sell signal if the close price reaches or exceeds the 38.2% Fibonacci level, RSI is overbought, or price is above the Upper Band
             positions.append('Sell')
             sell_price = df['close'].iloc[i]
             profit += (sell_price - buy_price)
@@ -102,7 +114,7 @@ def backtest_combined_strategy(df, lower_rsi=30, upper_rsi=70, adx_threshold=25,
 
     return profit, profit_ratio, accuracy_percentage
 
-# Backtest the combined strategy with Bollinger Bands, Support/Resistance, and Fibonacci Retracements
+# Backtest the combined strategy with Bollinger Bands, RSI for exit, Support/Resistance, and Fibonacci Retracements
 profit, profit_ratio, accuracy_percentage = backtest_combined_strategy(df)
 
 # Print results
