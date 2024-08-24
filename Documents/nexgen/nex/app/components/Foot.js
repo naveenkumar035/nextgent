@@ -8,7 +8,7 @@ import { FaFacebook } from "react-icons/fa";
 function Foot(){
     return(
        <>
-       <div className="bg-grey-100 h-1/2 w-full justify-around items-start flex md:flex-row flex-col justify-between items-center max-w-screen-xl mx-auto p-20 " >
+       <div className="bg-black h-1/2 w-full justify-around items-start flex md:flex-row flex-col justify-between items-center max-w-screen-xl mx-auto p-20 " >
       
          <div className="p-5" >
             <ul>
