@@ -41,7 +41,7 @@ function Foot(){
             </ul>
          </div>
          <div className="border-l border-red-600 " >
-          <h1 className="p-2" >
+          <h1 className="p-2 text-white " >
             Address
           </h1>
           <p className="text-white p-2 " >
