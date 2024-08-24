@@ -13,7 +13,7 @@ function Foot(){
          <div className="p-5" >
             <ul>
                 <p className="text-white-800 font-bold text-3xl pb-6 " >
-                      Next <span className="text-red-600" > Gen </span>
+                      Nex <span className="text-red-600" > Gen </span>
                 </p>
                 <div className="flex gap-6 pb-5" > <a
       href="https://www.instagram.com/nexgen_athlete_?igsh=NGx0a2hsOWdncWRs"
