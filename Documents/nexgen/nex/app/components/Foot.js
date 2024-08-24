@@ -20,14 +20,14 @@ function Foot(){
       target="_blank"
       rel="noopener noreferrer"
       >
-                 <FaInstagram className="text-2xl cursor-pointer hover:text-red-600 "/>
+                 <FaInstagram className="text-2xl text-white cursor-pointer hover:text-red-600 "/>
                  </a>
                  <a
       href="https://www.linkedin.com/company/nexgenathlete/"
       target="_blank"
       rel="noopener noreferrer"
       >
-                 <FaLinkedin  className="text-2xl cursor-pointer hover:text-red-600 "/>
+                 <FaLinkedin  className="text-2xl text-white cursor-pointer hover:text-red-600 "/>
                  </a>
                  <a
       href="https://www.facebook.com/profile.php?id=61564069760490&mibextid=ZbWKwL"
@@ -35,7 +35,7 @@ function Foot(){
       rel="noopener noreferrer"
       >
                 
-                 <FaFacebook className="text-2xl cursor-pointer hover:text-red-600 "/>
+                 <FaFacebook className="text-2xl text-white cursor-pointer hover:text-red-600 "/>
                  </a>
                 </div>
             </ul>
