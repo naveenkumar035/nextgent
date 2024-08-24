@@ -7,7 +7,7 @@ import Foot from "./components/Foot";
 
 
 export const metadata = {
-  title: "NextGen",
+  title: "NexGen",
   description: "Discover world-class training at Next Gen Athlete Sports Academy. Our expert coaches and state-of-the-art facilities are designed to help young athletes excel. Train like a champion with us!",
 };
 
